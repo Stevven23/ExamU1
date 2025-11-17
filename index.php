@@ -13,7 +13,7 @@
 
     <div class="card">
         <div class="icon"><i class="bi bi-person-badge"></i></div>
-        <h2>Song</h2>
+        <h2>Song Add</h2>
 
         <a href="#" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#addSongModal">
             Add Song
