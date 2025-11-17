@@ -1,0 +1,29 @@
+[package]
+entrypoint = "start"
+
+[dependencies]
+"wasmer/php-nginx" = "8.2.14"
+
+[fs]
+"." = "/"
+
+[[command]]
+name = "start"
+module = "wasmer/php-nginx:nginx"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = [
+    "-g",
+    "daemon off;",
+]
+  
+[[command]]
+name = "php-fpm"
+module = "wasmer/php-nginx:php-fpm"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = [
+    "--nodaemonize"
+]
